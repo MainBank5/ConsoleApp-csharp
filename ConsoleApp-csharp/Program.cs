@@ -175,12 +175,42 @@ namespace Girrafe1
                 pages = 328,
                 description = "Dystopian novel"
             };
+            Book book89 = new Book
+            {
+                author = "haniel",
+                name = "1988",
+                pages = 345,
+                description = "dyso ppp",
+            };
+
+            var book = new Book()
+            {
+                author = "George Orwell",
+                name = "1984",
+                pages = 328
+            };
+
+
+
+            //set get
             BookMutable book2 = new BookMutable();
             book2.Author = "George Orwell";
             book2.Name = "1984";
             book2.Pages = 328;
 
             book2.Author = "George Derrick";
+
+            var bookStory = new BookMutable
+            {
+                Author = "george orwell",
+                Name = "1984",
+                Pages = 328,
+                Description = "dystopian novel"
+            };
+            bookStory.Author = "JADEN";
+
+            bookStory.printinfo();
+
 
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
