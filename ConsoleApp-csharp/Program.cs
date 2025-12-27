@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleApp_csharp;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -79,6 +80,34 @@ namespace Girrafe1
                 Console.WriteLine(num);
             }
 
+            //2d arrray 
+            int[,] numGrid =
+            {
+                { 0, 1 },
+                { 1, 2 },
+                { 2, 3 },
+            };
+
+            Console.WriteLine("returns row:" + numGrid.GetLength(1)); //GetLength(row,columns)
+            numGrid.GetLength(0); // rows → 3
+            numGrid.GetLength(1); // columns → 2
+
+
+            Console.WriteLine("position of the first index in the first array:"+ numGrid[2, 1]); //first digit in the first arrray 
+
+            //jagged array 
+            int[][] jaggedArray = new int[][]
+             {
+                 new int[] { 0, 1 },
+                 new int[] { 1, 2, 3 },
+                 new int[] { 2 }
+            };
+
+            Console.WriteLine(jaggedArray[0][1]); // 1
+            Console.WriteLine(jaggedArray[1][2]); // 3
+            Console.WriteLine(jaggedArray[2][0]); // 2
+
+
             // Call the SayHi method
             //SayHi("Eliud", 7);
             //Console.WriteLine("the cube is " + cube(3));
@@ -110,6 +139,48 @@ namespace Girrafe1
 
             Console.WriteLine("the max number is : " + getMax(10, 90, 30));
             Console.WriteLine(GetDay(0));
+
+            //while loops 
+            int index = 1;
+
+            //while (index <= 5)
+            //{
+            //    Console.WriteLine( "while loop: " + index );
+            //    index++;
+            //}
+
+            //do loops 
+            do
+            {
+                Console.WriteLine("do loop:" + index );
+                index++;
+            } while (index <= 6);
+
+            //for loops 
+            for (int j = 0; j < 10; j++) {
+                Console.WriteLine(j);
+            }
+            
+            for (int k = 0; k < luckyNumbers.Length; k++ )
+            {
+                Console.WriteLine(luckyNumbers[k]);
+            }
+
+            Console.WriteLine("Power results: " + Getpow(3, 2));
+
+            Book book1 = new Book
+            {
+                author = "George Orwell",
+                name = "1984",
+                pages = 328,
+                description = "Dystopian novel"
+            };
+            BookMutable book2 = new BookMutable();
+            book2.Author = "George Orwell";
+            book2.Name = "1984";
+            book2.Pages = 328;
+
+            book2.Author = "George Derrick";
 
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
@@ -182,5 +253,17 @@ namespace Girrafe1
 
             return dayName; 
         }
+
+        static int Getpow(int baseNum , int powNum)
+        {
+            int result = 1;
+            for (int i = 0; i < powNum; i++)
+            {
+                result *= baseNum;
+            }
+            return result;
+        }
+
+ 
     }
 }
