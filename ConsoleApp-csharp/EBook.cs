@@ -16,5 +16,10 @@ namespace ConsoleApp_csharp
             Console.WriteLine($"format: {format}, filesize: {filesize} MB");
         }
 
+        public bool islong()
+        {
+            return pages > 300;
+        }
+
     }
 }

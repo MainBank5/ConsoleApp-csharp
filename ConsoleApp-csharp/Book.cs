@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace ConsoleApp_csharp
 {
@@ -19,6 +20,11 @@ namespace ConsoleApp_csharp
         public Book()
         {
             totalbooks++;
+        }
+
+        public void printinfo()
+        {
+            Console.WriteLine($"{name} by {author} ({pages} pages)");
         }
 
         public static void printtotalbooks()

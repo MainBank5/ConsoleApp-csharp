@@ -215,7 +215,7 @@ namespace Girrafe1
             bookStory.printinfo();
 
             //inheritance 
-            var ebook = new Ebook
+            var ebook = new EBook
             {
                 author = "george orwell",
                 name = "1984",
@@ -232,9 +232,6 @@ namespace Girrafe1
             // Methods from Ebook
             ebook.printfileinfo();  // format: PDF, filesize: 2.5 MB
 
-            // Mutability works
-            ebook.pages = 400;
-            ebook.filesize = 3.0;
 
             ebook.printinfo();      // 1984 by george orwell (400 pages)
             ebook.printfileinfo();  // format: PDF, filesize: 3.0 MB
