@@ -190,6 +190,9 @@ namespace Girrafe1
                 pages = 328
             };
 
+            Console.WriteLine(Book.totalbooks); //static attribute and methods you call it on the class itself 
+            Book.printtotalbooks();
+
 
 
             //set get
@@ -210,6 +213,32 @@ namespace Girrafe1
             bookStory.Author = "JADEN";
 
             bookStory.printinfo();
+
+            //inheritance 
+            var ebook = new Ebook
+            {
+                author = "george orwell",
+                name = "1984",
+                pages = 328,
+                description = "dystopian novel",
+                format = "PDF",
+                filesize = 2.5
+            };
+
+            // Methods from Book
+            ebook.printinfo();      // 1984 by george orwell (328 pages)
+            Console.WriteLine(ebook.islong()); // True
+
+            // Methods from Ebook
+            ebook.printfileinfo();  // format: PDF, filesize: 2.5 MB
+
+            // Mutability works
+            ebook.pages = 400;
+            ebook.filesize = 3.0;
+
+            ebook.printinfo();      // 1984 by george orwell (400 pages)
+            ebook.printfileinfo();  // format: PDF, filesize: 3.0 MB
+
 
 
             Console.WriteLine("Press any key to exit...");

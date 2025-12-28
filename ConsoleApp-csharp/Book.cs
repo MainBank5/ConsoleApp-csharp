@@ -13,6 +13,18 @@ namespace ConsoleApp_csharp
         public required string name { get; init; } //means its required /mandatory 
         public string? description { get; init; } //means it can be null/optional  
         public int pages { get; init; } //int cant be null so unless you explicitl say it 
+
+        public static int totalbooks { get; private set; } = 0;
+
+        public Book()
+        {
+            totalbooks++;
+        }
+
+        public static void printtotalbooks()
+        {
+            Console.WriteLine($"total books created: {totalbooks}");
+        }
     }
 }
 
